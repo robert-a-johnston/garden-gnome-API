@@ -26,6 +26,9 @@ if os.getenv('ENV') == 'development':
   DB = {
       'ENGINE': 'django.db.backends.postgresql',
       'NAME': DB_NAME,
+      'USER': 'postgres',
+      'PASSWORD': 'new_password'
+
   }
   # Set debug to true
   DEBUG = True
@@ -162,7 +165,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

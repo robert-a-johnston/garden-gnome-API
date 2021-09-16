@@ -11,7 +11,7 @@ class Seed(models.Model):
   season = models.CharField(max_length=100)
   light = models.CharField(max_length=100)
   favorite = models.BooleanField()
-  in_garden = models.BooleanField()
+  planted = models.BooleanField()
   number = models.IntegerField()
   notes = models.TextField(blank=True)
   owner = models.ForeignKey(
@@ -37,5 +37,4 @@ class Seed(models.Model):
       'favorite': self.favorite,
       'number': self.number,
       'notes': self.notes,
-      'image': self.image
     }

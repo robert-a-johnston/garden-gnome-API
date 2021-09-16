@@ -1,15 +1,11 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models.mango import Mango
 from .models.user import User
 from .models.garden import Garden
 from .models.seed import Seed
 
-class MangoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mango
-        fields = ('id', 'name', 'color', 'ripe', 'owner')
+
 class SeedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seed

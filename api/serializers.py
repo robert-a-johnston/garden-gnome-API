@@ -24,6 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
         # https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#referencing-the-user-model
         model = get_user_model()
         fields = ('id', 'email', 'password')
+        # requires password be 5 characters
         extra_kwargs = { 'password': { 'write_only': True, 'min_length': 5 } }
 
     # This create method will be used for model creation

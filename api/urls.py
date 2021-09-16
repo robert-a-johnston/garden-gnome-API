@@ -6,10 +6,13 @@ from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 
 urlpatterns = [
   	# Restful routing
+    # routes for seeds
     path('seeds/', Seeds.as_view(), name='seeds'),
     path('seeds/<int:pk>/', SeedDetail.as_view(), name='seed_detail'),
+    # routes for gardens
     path('gardens/', Gardens.as_view(), name='gardens'),
     path('gardens/<int:pk>/', GardenDetail.as_view(), name='garden_detail'),
+    # routes for auth
     path('sign-up/', SignUp.as_view(), name='sign-up'),
     path('sign-in/', SignIn.as_view(), name='sign-in'),
     path('sign-out/', SignOut.as_view(), name='sign-out'),

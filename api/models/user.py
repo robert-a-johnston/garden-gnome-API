@@ -17,6 +17,7 @@ class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         """Create a new user profile"""
         # Add a custom validation error
+        print('in create')
         if not email:
             raise ValueError('User must have an email address')
 
@@ -38,7 +39,6 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password):
         """Create and save a new superuser with given details"""
-
         # Use the custom create_user method above to create
         # the user.
         user = self.create_user(email, password)

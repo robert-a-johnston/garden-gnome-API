@@ -23,6 +23,7 @@ class Seed(models.Model):
     on_delete=models.CASCADE,
   )
 
+  # shows up in admin screen in browser
   def __str__(self):
     # returns info string
     return f"{self.name}, {self.type}, {self.number}"

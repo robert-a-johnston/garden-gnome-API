@@ -11,8 +11,9 @@ class Garden(models.Model):
     on_delete=models.CASCADE
   )
 
+  # shows up on admin screen in browser
   def __str__ (self):
-    return f"{self.name}, location: {self.locaton}"
+    return f"{self.name}, location: {self.location}"
 
   def as_dict(self):
     """Returns dictionary of Garden"""

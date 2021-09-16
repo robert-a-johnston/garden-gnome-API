@@ -9,8 +9,11 @@ from ..serializers import SeedSerializer
 
 # Create your views here.
 class Seeds(generics.ListCreateAPIView):
+    # checks if there is a user and they are authenticated
     permission_classes=(IsAuthenticated,)
+    # Makes the SeedSerializer available to the view
     serializer_class = SeedSerializer
+    # get all seeds
     def get(self, request):
         """Index request"""
         # Get all the seeds:
@@ -20,6 +23,7 @@ class Seeds(generics.ListCreateAPIView):
         data = SeedSerializer(seeds, many=True).data
         return Response({ 'seeds': data })
 
+    # create one seed
     def post(self, request):
         """Create request"""
         # Add user to request data object

@@ -11,18 +11,19 @@ class Seed(models.Model):
   season = models.CharField(max_length=100)
   light = models.CharField(max_length=100)
   favorite = models.BooleanField()
+  planted = models.BooleanField()
   number = models.IntegerField()
   notes = models.TextField(blank=True)
-  image = models.ImageField(blank=True)
   owner = models.ForeignKey(
     get_user_model(),
     on_delete=models.CASCADE
   )
   garden = models.ForeignKey(
     Garden,
-    on_delete=models.CASCADE
+    on_delete=models.CASCADE,
   )
 
+  # shows up in admin screen in browser
   def __str__(self):
     # returns info string
     return f"{self.name}, {self.type}, {self.number}"
@@ -37,5 +38,4 @@ class Seed(models.Model):
       'favorite': self.favorite,
       'number': self.number,
       'notes': self.notes,
-      'image': self.image
     }

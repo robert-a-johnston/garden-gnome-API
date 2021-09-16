@@ -1,11 +1,18 @@
+from api.views.garden_views import GardenDetail
 from django.urls import path
-from .views.mango_views import Mangos, MangoDetail
+from .views.seed_views import Seeds, SeedDetail
+from .views.garden_views import Gardens, GardenDetail
 from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 
 urlpatterns = [
   	# Restful routing
-    path('mangos/', Mangos.as_view(), name='mangos'),
-    path('mangos/<int:pk>/', MangoDetail.as_view(), name='mango_detail'),
+    # routes for seeds
+    path('seeds/', Seeds.as_view(), name='seeds'),
+    path('seeds/<int:pk>/', SeedDetail.as_view(), name='seed_detail'),
+    # routes for gardens
+    path('gardens/', Gardens.as_view(), name='gardens'),
+    path('gardens/<int:pk>/', GardenDetail.as_view(), name='garden_detail'),
+    # routes for auth
     path('sign-up/', SignUp.as_view(), name='sign-up'),
     path('sign-in/', SignIn.as_view(), name='sign-in'),
     path('sign-out/', SignOut.as_view(), name='sign-out'),

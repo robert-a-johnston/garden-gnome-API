@@ -10,7 +10,7 @@ from ..serializers import GardenSerializer
 # Create your views here.
 class Gardens(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
-    serializer_class = gardenSerializer
+    serializer_class = GardenSerializer
     def get(self, request):
         """Index request for future use"""
         # Get all the gardens:
@@ -23,6 +23,7 @@ class Gardens(generics.ListCreateAPIView):
     def post(self, request):
         """Create request for future use"""
         # Add user to request data object
+        print('in create')
         request.data['garden']['owner'] = request.user.id
         # Serialize/create garden
         garden = GardenSerializer(data=request.data['garden'])

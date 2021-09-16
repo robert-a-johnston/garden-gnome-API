@@ -5,7 +5,7 @@ class Garden(models.Model):
   # Garden Attributes
   name = models.CharField(max_length=250)
   location = models.CharField(max_length=250)
-  notes = models.TextField()
+  notes = models.TextField(blank=True)
   owner = models.ForeignKey(
     get_user_model(),
     on_delete=models.CASCADE

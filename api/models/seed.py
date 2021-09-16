@@ -11,16 +11,16 @@ class Seed(models.Model):
   season = models.CharField(max_length=100)
   light = models.CharField(max_length=100)
   favorite = models.BooleanField()
+  in_garden = models.BooleanField()
   number = models.IntegerField()
   notes = models.TextField(blank=True)
-  image = models.ImageField(blank=True)
   owner = models.ForeignKey(
     get_user_model(),
     on_delete=models.CASCADE
   )
   garden = models.ForeignKey(
     Garden,
-    on_delete=models.CASCADE
+    on_delete=models.CASCADE,
   )
 
   def __str__(self):

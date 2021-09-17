@@ -12,16 +12,17 @@ class Seed(models.Model):
   light = models.CharField(max_length=100)
   favorite = models.BooleanField()
   planted = models.BooleanField()
-  number = models.IntegerField()
+  number = models.CharField(max_length=100, blank=True)
   notes = models.TextField(blank=True)
   owner = models.ForeignKey(
     get_user_model(),
     on_delete=models.CASCADE
   )
-  garden = models.ForeignKey(
-    Garden,
-    on_delete=models.CASCADE,
-  )
+  # garden = models.ForeignKey(
+  #   Garden,
+  #   blank=True,
+  #   on_delete=models.CASCADE,
+  # )
 
   # shows up in admin screen in browser
   def __str__(self):

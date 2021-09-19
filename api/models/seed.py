@@ -7,9 +7,9 @@ from .garden import Garden
 class Seed(models.Model):
   # seed attributes
   name = models.CharField(max_length=100)
-  type = models.CharField(max_length=100)
-  season = models.CharField(max_length=100)
-  light = models.CharField(max_length=100)
+  type = models.CharField(max_length=100, blank=True)
+  season = models.CharField(max_length=100, blank=True)
+  light = models.CharField(max_length=100, blank=True)
   favorite = models.BooleanField()
   planted = models.BooleanField()
   number = models.CharField(max_length=100, blank=True)

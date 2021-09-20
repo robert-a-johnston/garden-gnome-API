@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 from ..models.garden import Garden
 from ..serializers import GardenSerializer
 
-# Create your views here.
+# Views for garden for use later
 class Gardens(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
     serializer_class = GardenSerializer

@@ -18,11 +18,6 @@ class Seed(models.Model):
     get_user_model(),
     on_delete=models.CASCADE
   )
-  # garden = models.ForeignKey(
-  #   Garden,
-  #   blank=True,
-  #   on_delete=models.CASCADE,
-  # )
 
   # shows up in admin screen in browser
   def __str__(self):

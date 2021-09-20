@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+# garden model for use later
 class Garden(models.Model):
   # Garden Attributes
   name = models.CharField(max_length=250)
